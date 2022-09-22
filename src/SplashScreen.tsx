@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PokemonCard from './PokemonCard';
 
 function SplashScreen() {
   const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
@@ -30,6 +31,7 @@ function SplashScreen() {
   return (
     <>
       <h1>SplashScreen</h1>
+      <PokemonCard poke={pokemons[0]} />
     </>
   );
 }
