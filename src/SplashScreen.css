@@ -56,7 +56,7 @@ header {
   border: none;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
   color: gray;
-  padding-left: 10px;
+  padding-left: 6px;
 }
 
 .search {
@@ -66,4 +66,25 @@ header {
   border: none;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
   padding-left: 10px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.link p {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(79, 122, 214);
+  margin-top: 20px;
+}
+
+.line {
+  height: 1.2px;
+  margin: 10px 0px;
+  background-color: rgba(181, 181, 181, 0.428);
 }

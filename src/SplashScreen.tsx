@@ -40,6 +40,9 @@ function SplashScreen() {
           </select>
           <input className='search' type='search' placeholder='Search'></input>
           <select className='dropdown'>
+            <option selected hidden>
+              Sort items
+            </option>
             <option value='A-Z'>From A-Z</option>
             <option value='Z-A'>From Z-A</option>
             <option value='height'>By Height</option>

@@ -1,6 +1,7 @@
 import { Pokemon } from 'pokenode-ts';
 import React from 'react';
 import './PokemonCard.css';
+import { Link } from 'react-router-dom';
 
 function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
   const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
@@ -30,6 +31,16 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
           </p>
         )
       )}
+      <div className='line'></div>
+      <div className='link'>
+        <Link
+          to={`/${pokemon.id}`}
+          state={{ pokemon }}
+          style={{ textDecoration: 'none' }}
+        >
+          <p>See Details</p>
+        </Link>
+      </div>
     </div>
   );
 }
