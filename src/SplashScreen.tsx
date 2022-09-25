@@ -33,13 +33,18 @@ function SplashScreen() {
     <div>
       <header>
         <div className='header-content'>
-          <select onChange={handleAmount}>
+          <select className='dropdown' onChange={handleAmount}>
             <option value='10'>Show 10 results</option>
             <option value='20'>Show 20 results</option>
             <option value='50'>Show 50 results</option>
           </select>
-          <div>Search bar</div>
-          <div>Sort dropdown</div>
+          <input className='search' type='search' placeholder='Search'></input>
+          <select className='dropdown'>
+            <option value='A-Z'>From A-Z</option>
+            <option value='Z-A'>From Z-A</option>
+            <option value='height'>By Height</option>
+            <option value='weight'>By Weight</option>
+          </select>
         </div>
       </header>
 
