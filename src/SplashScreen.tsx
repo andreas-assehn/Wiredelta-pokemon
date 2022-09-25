@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import PokemonCard from './PokemonCard';
+import PokemonCard from './components/PokemonCard';
 import './SplashScreen.css';
 import { APIResource, Pokemon } from 'pokenode-ts';
+import PageChanger from './components/PageChanger';
 
 function SplashScreen() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -28,14 +29,6 @@ function SplashScreen() {
     setShowAmount(Number(event.target.value));
   };
 
-  const prevPage = () => {
-    setPage((prevState) => prevState - 1);
-  };
-
-  const nextPage = () => {
-    setPage((prevState) => prevState + 1);
-  };
-
   return (
     <div>
       <header>
@@ -50,21 +43,7 @@ function SplashScreen() {
         </div>
       </header>
 
-      <div className='change-page'>
-        {page < 1 ? (
-          <p className='button-disabled'>Previous page</p>
-        ) : (
-          <button onClick={prevPage}>Previous page</button>
-        )}
-        <p>
-          {page + 1} / {Math.ceil(1154 / showAmount)}
-        </p>
-        {page === Math.ceil(1154 / showAmount) ? (
-          <p className='button-disabled'>Previous page</p>
-        ) : (
-          <button onClick={nextPage}>Next page</button>
-        )}
-      </div>
+      <PageChanger page={page} setPage={setPage} showAmount={showAmount} />
 
       <div className='wrapper'>
         {pokemons.map((pokemon: Pokemon) => (
@@ -72,21 +51,7 @@ function SplashScreen() {
         ))}
       </div>
 
-      <div className='change-page'>
-        {page < 1 ? (
-          <p className='button-disabled'>Previous page</p>
-        ) : (
-          <button onClick={prevPage}>Previous page</button>
-        )}
-        <p>
-          {page + 1} / {Math.ceil(1154 / showAmount)}
-        </p>
-        {page === Math.ceil(1154 / showAmount) ? (
-          <p className='button-disabled'>Previous page</p>
-        ) : (
-          <button onClick={nextPage}>Next page</button>
-        )}
-      </div>
+      <PageChanger page={page} setPage={setPage} showAmount={showAmount} />
     </div>
   );
 }
