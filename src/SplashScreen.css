@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 1065px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  gap: 35px;
+}
+
+header {
+  height: 60px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  max-width: 1065px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
